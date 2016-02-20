@@ -1,0 +1,146 @@
+$sun: "\f113";
+$moon: "\f10d";
+$cloud: "\f106";
+$rain: "\f10a";
+$snow: "\f10b";
+$sleet: "\f10c";
+$wind: "\f115";
+$fog: "\f108";
+$smallsun: "\f101";
+$smallmoon: "\f100";
+$hail: "\f10f";
+$thunder: "\f114";
+
+$size: 20vw;
+
+.weather-icon {
+    font-family: 'iconvault';
+    color: white;
+    position: relative;
+    
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        font-size: $size / 2;
+    }
+    
+    &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        font-size: $size / 2;
+    }
+    
+    width: $size;
+    height: $size;
+}
+
+.clear-day {
+    &:after {
+        content: $sun;
+    }
+}
+
+.clear-night {
+    &:after {
+        content: $moon;
+    }
+}
+
+.rain {
+    &:before {
+        content: $rain;
+    }
+    
+    &:after {
+        content: $cloud;
+    }
+}
+
+.snow {
+    &:before {
+        content: $snow;
+    }
+    
+    &:after {
+        content: $cloud;
+    }
+}
+
+.sleet {
+    &:before {
+        content: $sleet;
+    }
+    
+    &:after {
+        content: $cloud;
+    }
+}
+
+.wind {
+    &:before {
+        content: $wind;
+    }
+    
+    &:after {
+        content: $cloud;
+    }
+}
+
+.fog {
+    &:after {
+        content: $fog;
+    }
+}
+
+.cloudy {
+    &:after {
+        content: $cloud;
+    }
+}
+
+.partly-cloudy-day {
+    &:before {
+        content: $smallsun;
+    }
+    
+    &:after {
+        content: $cloud;
+    }
+}
+
+.partly-cloudy-night {
+    &:before {
+        content: $smallmoon;
+    }
+    
+    &:after {
+        content: $cloud;
+    }
+}
+
+.hail {
+    &:before {
+        content: $hail;
+    }
+    
+    &:after {
+        content: $cloud;
+    }
+}
+
+.thunderstorm {
+    &:before {
+        content: $thunder;
+    }
+    
+    &:after {
+        content: $cloud;  
+    }
+}
+

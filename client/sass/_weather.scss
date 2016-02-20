@@ -1,0 +1,42 @@
+.weather {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 30%;
+    
+    .weather-header {
+        color: darkgray;
+    }
+    
+    .weather-icon-composite {
+        display: flex;
+        flex-direction: row;
+        
+        &>div {
+            flex: 1;
+        }
+    }
+    
+    .weather-daily-high {
+        border-bottom: 1px solid gray;
+    }
+    
+    .weather-daily-low {
+        color: gray;
+        margin-top: 0;
+    }
+    
+    .weather-details {
+        display: flex;
+        flex-direction: column;
+        margin-left: 16px;
+        
+        &>* {
+            margin: auto;
+        }
+    }
+    
+    .weather-today {
+        margin-top: 64px;
+    }
+}

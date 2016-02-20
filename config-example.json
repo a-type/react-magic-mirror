@@ -1,0 +1,13 @@
+{
+    "forecastio": {
+        "apiKey": "FORECAST_IO_API_KEY",
+        "location": {
+            "lat": 50,
+            "lng": 50
+        }
+    },
+    
+    "user": {
+        "name": "Grant"
+    }
+}
