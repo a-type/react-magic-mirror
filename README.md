@@ -23,5 +23,7 @@ Create a config file like `config-example.json`
 ## thanks to
 
 [unsplash](www.unsplash.com)
+
 [forecast font](http://forecastfont.iconvau.lt/)
+
 [forecast.io](https://developer.forecast.io/)
