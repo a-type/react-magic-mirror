@@ -3,8 +3,9 @@
 // normally you'd just use a config.json direclty, but I'd like Heroku to be able to store some private info
 // in config vars. This just lets env vars override config options if they're present.
 const _ = require('lodash');
+const fs = require('fs');
 
-let config = require('../config.json');
+let config = {};
 
 let envConfig = {
       forecastio: {
@@ -20,6 +21,7 @@ let envConfig = {
       }
 };
 
+
 if (envConfig.forecastio.location.lat) {
     envConfig.forecastio.location.lat =
         Number.parseFloat(envConfig.forecastio.location.lat);
@@ -29,4 +31,9 @@ if (envConfig.forecastio.location.lng) {
         Number.parseFloat(envConfig.forecastio.location.lng);
 }
 
-export default _.defaultsDeep(envConfig, config);
+let stats = fs.stateSync('../config.json');
+if (stats.isFile()) {
+    config = _.defaultsDeep(envConfig, require('../config.json'));
+}
+
+export default config;
