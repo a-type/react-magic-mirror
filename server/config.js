@@ -20,4 +20,13 @@ let envConfig = {
       }
 };
 
+if (envConfig.forecastio.location.lat) {
+    envConfig.forecastio.location.lat =
+        Number.parseFloat(envConfig.forecastio.location.lat);
+}
+if (envConfig.forecastio.location.lng) {
+    envConfig.forecastio.location.lng =
+        Number.parseFloat(envConfig.forecastio.location.lng);
+}
+
 export default _.defaultsDeep(envConfig, config);
