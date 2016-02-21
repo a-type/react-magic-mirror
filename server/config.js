@@ -35,6 +35,7 @@ try {
 }
 catch (e) {
     console.log('no config file; using env vars.');
+    config = envConfig;
 }
 
 module.exports = config;
