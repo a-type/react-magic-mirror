@@ -11,7 +11,7 @@ export default class Weather extends Component {
             const high = forecast.daily.data[0].temperatureMax + '°';
             const low = forecast.daily.data[0].temperatureMin + '°';
             return (
-                <div className='weather'>
+                <div className='weather component'>
                     <div className='weather-currently'>
                         <h4 className='weather-header'>currently</h4>
                         <div className='weather-icon-composite'>

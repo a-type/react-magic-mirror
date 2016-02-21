@@ -12,7 +12,7 @@ const getTime = () => {
 }
 
 const getRandomBackground = () => {
-    const idx = Math.floor(Math.random(numBackgrounds));
+    const idx = Math.floor(Math.random() * numBackgrounds);
     return `url(/img/idle/${idx}.jpg)`;
 }
 
@@ -45,7 +45,10 @@ export default class Home extends Component {
     }
     
     goIdle () {
-        self.setState({ idle: true });
+        this.setState({
+            idleBackground: getRandomBackground(),
+            idle: true
+        });
     }
     
     componentDidMount () {
@@ -58,6 +61,9 @@ export default class Home extends Component {
                 self.setState({ idle: false });
                 
                 setTimeout(self.goIdle, 5 * 60 * 1000);
+            }
+            else if (e.code === 'KeyI') {
+                self.goIdle();
             }
         });
         
@@ -75,14 +81,18 @@ export default class Home extends Component {
     }
     
     render () {
+        let className = 'home';
+        if (this.state.idle) {
+            className += ' home-idle';
+        }
+        
         return (
-            <div className='home'>
+            <div className={className}>
                 <div className='info'>
                     <Greeting user={this.state.user}/>
                     <Weather forecast={this.state.forecast}/>
                 </div>
                 <div className='idle' style={{
-                    opacity: this.state.idle ? 1 : 0,
                     backgroundImage: this.state.idleBackground
                     }}>
                     <div className='idle-time'>{this.state.time}</div>

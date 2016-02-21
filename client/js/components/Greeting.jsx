@@ -24,8 +24,8 @@ const generateGreeting = (name) => {
 const generateState = (name) => {
     let now = moment();
     return {
-        time: now.format('h:mma'),
-        date: now.format('ddd, MMM Do YYYY'),
+        time: now.format('h:mm a'),
+        date: now.format('ddd, MMM Do'),
         greeting: generateGreeting(name)
     }
 };
@@ -41,10 +41,10 @@ export default class Greeting extends Component {
     
     render () {
         const state = generateState(this.props.user.name);
-        return (<div className='greeting'>
-            <h1>{state.time}</h1>
-            <h2>{state.date}</h2>
-            <h3>{state.greeting}</h3>
+        return (<div className='greeting component'>
+            <h1 className='greeting-time'>{state.time}</h1>
+            <h2 className='greeting-date'>{state.date}</h2>
+            <h3 className='greeting-text'>{state.greeting}</h3>
         </div>);
     }
 }

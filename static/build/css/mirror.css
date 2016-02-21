@@ -117,7 +117,10 @@ h3 {
   position: fixed;
   top: 0;
   left: 0;
-  max-width: 20%; }
+  max-width: 30%; }
+
+.greeting-time {
+  margin-top: 0; }
 
 .weather {
   position: fixed;
@@ -155,10 +158,25 @@ h3 {
   background-color: black;
   background-size: cover;
   background-position-x: center;
-  transition: 10s; }
+  opacity: 0;
+  transition: 5s; }
   .idle .idle-time {
     position: fixed;
     bottom: 0;
     left: 0;
     font-size: 5em;
     opacity: 0.5; }
+
+.home-idle > .idle {
+  opacity: 1; }
+
+.component {
+  transition: 1s;
+  transition-delay: 2s;
+  transform: translateY(0);
+  opacity: 1; }
+
+.home-idle .component {
+  transform: translateY(80px);
+  opacity: 0;
+  transition-delay: 0s; }

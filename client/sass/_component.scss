@@ -1,0 +1,13 @@
+.component {
+    transition: 1s;
+    transition-delay: 2s;
+    
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.home-idle .component {
+    transform: translateY(80px);
+    opacity: 0;
+    transition-delay: 0s;
+}

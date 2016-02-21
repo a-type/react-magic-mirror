@@ -10,7 +10,8 @@
     background-size: cover;
     background-position-x: center;
     
-    transition: 10s;
+    opacity: 0;
+    transition: 5s;
     
     .idle-time {
         position: fixed;
@@ -19,4 +20,8 @@
         font-size: 5em;
         opacity: 0.5;
     }
+}
+
+.home-idle>.idle {
+    opacity: 1;
 }
