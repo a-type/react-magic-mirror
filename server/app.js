@@ -56,5 +56,5 @@ router.get('/weather', function * () {
 
 app.use(router.routes());
 
-app.listen(8080);
+app.listen(process.env.PORT || 8080);
 console.log('app started');
