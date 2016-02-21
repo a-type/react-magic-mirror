@@ -31,7 +31,7 @@ if (envConfig.forecastio.location.lng) {
         Number.parseFloat(envConfig.forecastio.location.lng);
 }
 
-let stats = fs.stateSync('../config.json');
+let stats = fs.statSync('../config.json');
 if (stats.isFile()) {
     config = _.defaultsDeep(envConfig, require('../config.json'));
 }
