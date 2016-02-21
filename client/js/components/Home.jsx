@@ -64,12 +64,12 @@ export default class Home extends Component {
         let self = this;
         
         window.addEventListener('keydown', (e) => {
-            if (e.code === 'KeyA' || e.char === 'a' || e.key === 'a') {
+            if (e.code === 'KeyA' || e.char === 'a' || e.key === 'a' || e.keyCode === 65) {
                 self.setState({ idle: false });
                 
                 setTimeout(self.goIdle, idleTimeout);
             }
-            else if (e.code === 'KeyI' || e.char === 'i' || e.key === 'i') {
+            else if (e.code === 'KeyI' || e.char === 'i' || e.key === 'i' || e.keyCode === 75) {
                 self.goIdle();
             }
         });
