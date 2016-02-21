@@ -6,7 +6,7 @@ const serve = require('koa-static');
 const logger = require('koa-logger');
 const Router = require('koa-router');
 
-const config = require('../config.json');
+import config from './config';
 
 const Path = require('path');
 const Forecast = require('forecast.io-bluebird');
