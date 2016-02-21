@@ -6,6 +6,9 @@ const request = require('browser-request');
 const moment = require('moment');
 
 const numBackgrounds = 20;
+const backgroundChangeInterval = 60 * 60 * 1000;
+const weatherUpdateInterval = 60 * 60 * 1000;
+const idleTimeout = 5 * 60 * 1000;
 
 const getTime = () => {
     return moment().format('h:mm a');
@@ -28,18 +31,22 @@ export default class Home extends Component {
         };
     }
     
-    update () {
+    fetchWeather () {
+        let self = this;
+        
+        request.get('/weather', (er, response) => {
+            self.setState({
+                forecast: JSON.parse(response.body)
+            });
+        });
+    }
+    
+    fetchUser () {
         let self = this;
         
         request.get('/user', (er, response) => {
             self.setState({
                 user: JSON.parse(response.body)
-            });
-        });
-        
-        request.get('/weather', (er, response) => {
-            self.setState({
-                forecast: JSON.parse(response.body)
             });
         });
     }
@@ -52,7 +59,7 @@ export default class Home extends Component {
     }
     
     componentDidMount () {
-        this.update();
+        this.fetchUser();
         
         let self = this;
         
@@ -60,7 +67,7 @@ export default class Home extends Component {
             if (e.code === 'KeyA' || e.char === 'a' || e.key === 'a') {
                 self.setState({ idle: false });
                 
-                setTimeout(self.goIdle, 5 * 60 * 1000);
+                setTimeout(self.goIdle, idleTimeout);
             }
             else if (e.code === 'KeyI' || e.char === 'i' || e.key === 'i') {
                 self.goIdle();
@@ -76,7 +83,13 @@ export default class Home extends Component {
         (function nextBackground() {
             self.setState({ idleBackground: getRandomBackground() });
             
-            setTimeout(nextBackground, 60 * 60 * 1000);
+            setTimeout(nextBackground, backgroundChangeInterval);
+        })();
+        
+        (function updateWeather() {
+            self.fetchWeather();
+            
+            setTimeout(updateWeather, weatherUpdateInterval);
         })();
     }
     
