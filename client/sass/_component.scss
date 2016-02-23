@@ -1,6 +1,9 @@
+$transitionDelay: 1s;
+$transitionTime: 0.5s;
+
 .component {
-    transition: 1s;
-    transition-delay: 2s;
+    transition: $transitionTime;
+    transition-delay: $transitionDelay;
     
     transform: translateY(0);
     opacity: 1;

@@ -1,3 +1,5 @@
+$transitionTime: 1s;
+
 .idle {
     position: fixed;
     top: 0;
@@ -11,7 +13,7 @@
     background-position-x: center;
     
     opacity: 0;
-    transition: 5s;
+    transition: $transitionTime;
     
     .idle-time {
         position: fixed;

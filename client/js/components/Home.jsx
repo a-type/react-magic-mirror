@@ -99,16 +99,18 @@ export default class Home extends Component {
             className += ' home-idle';
         }
         
+        const idleBackgroundStyle = {
+            //backgroundImage: this.state.idleBackground
+        };
+        
         return (
             <div className={className}>
                 <div className='info'>
                     <Greeting user={this.state.user}/>
                     <Weather forecast={this.state.forecast}/>
                 </div>
-                <div className='idle' style={{
-                    backgroundImage: this.state.idleBackground
-                    }}>
-                    <div className='idle-time'>{this.state.time}</div>
+                <div className='idle' style={idleBackgroundStyle}>
+                    <h1 className='idle-time'>{this.state.time}</h1>
                 </div>
             </div>
         );

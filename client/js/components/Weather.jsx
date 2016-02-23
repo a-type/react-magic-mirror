@@ -10,6 +10,7 @@ export default class Weather extends Component {
         else {
             const high = forecast.daily.data[0].temperatureMax + '°';
             const low = forecast.daily.data[0].temperatureMin + '°';
+            const now = forecast.currently.temperature + '°';
             return (
                 <div className='weather component'>
                     <div className='weather-currently'>
@@ -17,10 +18,10 @@ export default class Weather extends Component {
                         <div className='weather-icon-composite'>
                             <div className={'weather-icon ' + forecast.currently.icon}/>
                             <div className='weather-details'>
-                                <h1>{forecast.currently.temperature}</h1>
+                                <h1>{now}</h1>
                             </div>
                         </div>
-                        <h2>{forecast.currently.summary}</h2>
+                        <h2 className='weather-summary'>{forecast.currently.summary}</h2>
                     </div>
                     <div className='weather-today'>
                         <h4 className='weather-header'>forecast</h4>
@@ -35,7 +36,7 @@ export default class Weather extends Component {
                                 </h1>
                             </div>
                         </div>
-                        <h2>{forecast.daily.summary}</h2>
+                        <h2 className='weather-summary'>{forecast.daily.summary}</h2>
                     </div>
                 </div>
             );
