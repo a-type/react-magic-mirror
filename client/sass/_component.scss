@@ -2,15 +2,15 @@ $transitionDelay: 1s;
 $transitionTime: 0.5s;
 
 .component {
-    transition: $transitionTime;
-    transition-delay: $transitionDelay;
-    
-    transform: translateY(0);
+    //transition: $transitionTime;
+    //transition-delay: $transitionDelay;
+
+    //transform: translateY(0);
     opacity: 1;
 }
 
 .home-idle .component {
-    transform: translateY(80px);
-    opacity: 0;
-    transition-delay: 0s;
+    //transform: translateY(80px);
+    //opacity: 0;
+    //transition-delay: 0s;
 }

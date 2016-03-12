@@ -4,44 +4,44 @@
     right: 0;
     max-width: 20%;
     font-size: 0.75em;
-    
+
     .weather-header {
-        color: darkgray;
+        color: lightgray;
     }
-    
+
     .weather-icon-composite {
         display: flex;
         flex-direction: row;
-        
+
         &>div {
             flex: 1;
         }
     }
-    
+
     .weather-details {
         display: flex;
         flex-direction: column;
         margin-left: 16px;
-        
+
         &>* {
             margin: auto;
         }
     }
-    
+
     .weather-daily-high {
-        border-bottom: 1px solid gray;
+        border-bottom: 1px solid lightgray;
         margin-bottom: 0;
     }
-    
+
     .weather-daily-low {
-        color: gray;
+        color: lightgray;
         margin-top: 0;
     }
-    
+
     .weather-summary {
-        color: gray;
+        color: lightgray;
     }
-    
+
     .weather-today {
         margin-top: 64px;
     }

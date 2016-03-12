@@ -7,14 +7,14 @@ $transitionTime: 1s;
     left: 0;
     right: 0;
     z-index: 1000;
-    
+
     background-color: black;
     background-size: cover;
     background-position-x: center;
-    
+
     opacity: 0;
-    transition: $transitionTime;
-    
+    //transition: $transitionTime;
+
     .idle-time {
         position: fixed;
         bottom: 0;
