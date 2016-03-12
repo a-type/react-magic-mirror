@@ -129,7 +129,7 @@ h3 {
   max-width: 20%;
   font-size: 0.75em; }
   .weather .weather-header {
-    color: darkgray; }
+    color: lightgray; }
   .weather .weather-icon-composite {
     display: flex;
     flex-direction: row; }
@@ -142,13 +142,13 @@ h3 {
     .weather .weather-details > * {
       margin: auto; }
   .weather .weather-daily-high {
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid lightgray;
     margin-bottom: 0; }
   .weather .weather-daily-low {
-    color: gray;
+    color: lightgray;
     margin-top: 0; }
   .weather .weather-summary {
-    color: gray; }
+    color: lightgray; }
   .weather .weather-today {
     margin-top: 64px; }
 
@@ -162,8 +162,7 @@ h3 {
   background-color: black;
   background-size: cover;
   background-position-x: center;
-  opacity: 0;
-  transition: 1s; }
+  opacity: 0; }
   .idle .idle-time {
     position: fixed;
     bottom: 0;
@@ -175,12 +174,4 @@ h3 {
   opacity: 1; }
 
 .component {
-  transition: 0.5s;
-  transition-delay: 1s;
-  transform: translateY(0);
   opacity: 1; }
-
-.home-idle .component {
-  transform: translateY(80px);
-  opacity: 0;
-  transition-delay: 0s; }
