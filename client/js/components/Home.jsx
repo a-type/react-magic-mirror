@@ -17,8 +17,7 @@ export default class Home extends Component {
         this.state = {
             user: { name: '' },
             forecast: null,
-            time: getTime(),
-            idleBackground: getRandomBackground()
+            time: getTime()
         };
     }
 
